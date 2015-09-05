@@ -1,7 +1,8 @@
 {
     "name": "designspike/menuchain",
-    "description": "A twig function for finding a link's position in a menu.",
+    "description": "Adds a twig function for finding a link's position in a menu.",
     "type": "bolt-extension",
+    "keywords": ["menu", "navigation", "twig", "templates"],
     "require": {
         "bolt/bolt": ">=2.0.0,<3.0.0"
     },
