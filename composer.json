@@ -1,6 +1,6 @@
 {
     "name": "designspike/menuchain",
-    "description": "A description about your extension should go here.",
+    "description": "A twig function for finding a link's position in a menu.",
     "type": "bolt-extension",
     "require": {
         "bolt/bolt": ">=2.0.0,<3.0.0"
@@ -8,8 +8,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Your Name", 
-            "email": "you@example.com"
+            "name": "Will Hall", 
+            "email": "will@designspike.com"
         }
     ],
     "autoload": {
