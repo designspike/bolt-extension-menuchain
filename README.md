@@ -62,7 +62,7 @@ array:3 [▼
 ]
 ```
 
-## Example 1: Using menuchain_urls to highlight current navigation hierarchy
+## Example 1: Using menuchain_urls() to highlight current navigation hierarchy
 
 ```twig
 {# before we start generating the menu html #}
