@@ -1,51 +1,18 @@
 <?php
 
-namespace Bolt\Extension\DesignSpike\MenuChain\Twig;
+namespace Bolt\Extension\DesignSpike\MenuChain;
 
-use Silex\Application;
+use Bolt\Application;
+use Bolt\Extension\SimpleExtension;
 
-/**
- * Description goes here
- *
- * @author
- * @copyright
- * @license
- */
-class MenuChainExtension extends \Twig_Extension
+class MenuChainExtension extends SimpleExtension
 {
-    /** @var Application */
-    private $app;
-
-    /** @var \Twig_Environment */
-    private $twig = null;
-
-    public function __construct(Application $app)
+    public function registerTwigFunctions()
     {
-        $this->app = $app;
-    }
-
-    public function initRuntime(\Twig_Environment $environment)
-    {
-        $this->twig = $environment;
-    }
-
-    /**
-     * Return the name of the extension
-     */
-    public function getName()
-    {
-        return 'menuchain.extension';
-    }
-
-    /**
-     * The functions we add
-     */
-    public function getFunctions()
-    {
-        return array(
-            'menuchain_nodes' => new \Twig_Function_Method($this, 'twigMenuChainNodes'),
-            'menuchain_urls'  => new \Twig_Function_Method($this, 'twigMenuChainUrls')
-        );
+        return [
+            'menuchain_nodes' => 'twigMenuChainNodes',
+            'menuchain_urls' => 'twigMenuChainUrls'
+        ];
     }
 
     /**
@@ -58,7 +25,7 @@ class MenuChainExtension extends \Twig_Extension
     public function twigMenuChainNodes($identifier, $leaf_path)
     {
 
-        $menu = $this->app['menu']->menu($identifier)->getItems();
+        $menu = $this->getContainer()['menu']->menu($identifier)->getItems();
 
         return $this->findMenuChainNodes($menu, $leaf_path);
 

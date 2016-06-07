@@ -4,9 +4,10 @@
     "type": "bolt-extension",
     "keywords": ["menu", "navigation", "twig", "templates", "breadcrumbs"],
     "require": {
-        "bolt/bolt": ">=2.0.0,<3.0.0"
+        "bolt/bolt": "^3.0"
     },
     "license": "MIT",
+    "minimum-stability": "beta",
     "authors": [
         {
             "name": "Will Hall",
@@ -14,14 +15,11 @@
         }
     ],
     "autoload": {
-        "files": [
-            "init.php"
-        ],
         "psr-4": {
-            "Bolt\\Extension\\DesignSpike\\MenuChain\\": [
-                "",
-                "src/"
-            ]
+            "Bolt\\Extension\\DesignSpike\\MenuChain\\": "src"
         }
+    },
+    "extra": {
+        "bolt-class": "Bolt\\Extension\\DesignSpike\\MenuChain\\MenuChainExtension"
     }
 }
