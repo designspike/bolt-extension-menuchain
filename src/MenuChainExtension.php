@@ -66,7 +66,7 @@ class MenuChainExtension extends SimpleExtension
                 // if this is the target link in the chain, return the current chain with this appended
                 return array_merge($chain, array($node));
             }
-            elseif (is_array($node['submenu'])) {
+            elseif (isset($node['submenu']) and is_array($node['submenu'])) {
                 // search the submenus, adding current Node to the chain
                 $subchain = $this->findMenuChainNodes($node['submenu'], $leaf_path, array_merge($chain, array($node)));
                 if ($subchain) {
