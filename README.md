@@ -36,7 +36,7 @@ This function is useful for finding the title and link of each item in the "curr
 Example:
 
 ```twig
-{% set menuchain = menuchain_nodes('main', paths.current) %}
+{% set menuchain = menuchain_nodes('main', app.request.getPathInfo()) %}
 {{ dump(menuchain) }}
 ```
 
@@ -66,7 +66,7 @@ array:3 [▼
 
 ```twig
 {# before we start generating the menu html #}
-{% set menuchain = menuchain_urls('main', paths.current) %}
+{% set menuchain = menuchain_urls('main', app.request.getPathInfo()) %}
 
 [...]
 
@@ -81,7 +81,7 @@ array:3 [▼
 
 ```twig
 {# find the path from the root of the navigation, to this page #}
-{% set menuchain = menuchain_nodes('main', paths.current) %}
+{% set menuchain = menuchain_nodes('main', app.request.getPathInfo()) %}
 
 {# display breadcrumbs, like:  Home > Categories > Vegetables > Pears #}
 {% if menuchain %}
