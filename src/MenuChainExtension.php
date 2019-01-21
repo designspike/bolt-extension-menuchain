@@ -62,7 +62,7 @@ class MenuChainExtension extends SimpleExtension
     private function findMenuChainNodes(array $menu, $leaf_path, $chain = array())
     {
         foreach ($menu as $node) {
-            if ($node['link'] == $leaf_path) {
+            if (isset($node['link']) and $node['link'] == $leaf_path) {
                 // if this is the target link in the chain, return the current chain with this appended
                 return array_merge($chain, array($node));
             }
